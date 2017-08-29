@@ -1,0 +1,67 @@
+
+table{
+	margin-top: 5px;
+
+}
+
+.semana{
+	
+	height: 100px;
+}
+
+.dias{
+	max-width: 100px;
+	padding: 0;
+}
+
+.dias span{
+
+	position: relative;
+    top: -10px;
+    left: 4px;
+}
+
+.dias:hover{
+	background-color: #d35400;
+	
+}
+
+
+#map_canvas{
+	height: 300px;
+	width: 100%;
+}
+#tipo{
+	margin-top: 10px;
+}
+#dataEvent{
+	display: inline-block;
+	width: 200px;
+	margin-top: 10px;
+}
+#horaEvent{
+	display: inline-block;
+	width: 100px;
+	margin-top: 10px;
+}
+#Endereco{
+	margin-top: 10px;
+}
+#Search{
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
+#toast{
+        display: none; /* Hidden by default. Visible on click */
+        min-width: 50px; /* Set a default minimum width */
+        margin-left: -125px; /* Divide value of min-width by 2 */
+        background-color: #333; /* Black background color */
+        color: #fff; /* White text color */
+        text-align: center; /* Centered text */
+        border-radius: 2px; /* Rounded borders */
+        padding: 16px; /* Padding */
+        position: fixed; /* Sit on top of the screen */
+        z-index: 10; /* Add a z-index if needed */
+        left: 50%; /* Center the snackbar */
+        top: 30px; /* 30px from the bottom */
+}

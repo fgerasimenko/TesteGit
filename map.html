@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+      #map_canvas { height: 20% }
+
+      #toast{
+        display: none; /* Hidden by default. Visible on click */
+        min-width: 250px; /* Set a default minimum width */
+        margin-left: -125px; /* Divide value of min-width by 2 */
+        background-color: #333; /* Black background color */
+        color: #fff; /* White text color */
+        text-align: center; /* Centered text */
+        border-radius: 2px; /* Rounded borders */
+        padding: 16px; /* Padding */
+        position: fixed; /* Sit on top of the screen */
+        z-index: 1; /* Add a z-index if needed */
+        left: 50%; /* Center the snackbar */
+        bottom: 30px; /* 30px from the bottom */
+      }
+
+      .show{
+        visibility: visible; /* Show the snackbar */
+        /* Add animation: Take 0.5 seconds to fade in and out the snackbar. 
+        However, delay the fade out process for 2.5 seconds */
+        -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        animation: fadein 0.5s, fadeout 0.5s 2.5s;
+      }
+
+    </style>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmks2V8tln81iI353dFIbL4wRpZcS3A4c" >
+    </script>
+    <script type="text/javascript">
+      function initialize() {
+        var mapOptions = {
+          center: new google.maps.LatLng(-34.397, 150.644),
+          zoom: 8,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("map_canvas"),
+            mapOptions);
+      }
+    </script>
+  </head>
+  <body onload="initialize()">
+    <div id="map_canvas" style="width:50%; height:50%"></div>
+    <button id="but">toast!</button>
+    <div id="toast">
+      Toast!
+    </div>
+    <script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        
+      });
+    </script>
+  </body>
+</html>	

@@ -1,0 +1,24 @@
+nav.navbar {
+	background-color: #EEE;
+}
+
+nav.navbar li{
+	list-style: none;
+	display: inline-block;
+	margin: 5px;
+	padding: 0;
+	background-size: 50px;
+}
+
+
+nav.navbar a{
+	color:#d35400;
+	text-decoration: none;
+}
+
+.navhover{
+	background-color:#DDD;
+	text-decoration: none;
+	margin:0 auto;
+	border-radius: 5px;
+}

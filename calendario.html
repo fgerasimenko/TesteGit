@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+	<meta charset="utf-8">
+	<link  href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/nav.css">
+	<link rel="stylesheet" type="text/css" href="css/calendario.css">
+	<title>CALENDÁRIO - OCELOTS</title>
+</head>
+<body>
+
+<!-- Modal -->
+<div class="modal fade" id="jogo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Adicionar um Evento ao Calendário</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" onclick="Limpar()">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" required>
+        <select id="tipoEvent" class="form-control">
+        	<option id="nulo">---</option>
+        	<option value="0">Treino</option>
+        	<option value="1">Jogo</option>
+        	<option value="2">Reunião</option>
+			<option value="3">Outro</option>
+        </select>
+        <div class="container">
+        	<div class="row" >
+        		<div class="col-md-2">
+        			
+        		</div>
+        		<div class="col-md-8" id="Event">
+        			
+        		</div>
+        		<div class="col-md-2">
+        			
+        		</div>
+        	</div>
+        </div>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="Limpar()">Sair</button>
+        <button type="button" id="Save" onclick="SalvarModal()" data-dismiss="modal" class="btn btn-default">Salvar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="toast">Salvo com sucesso!</div>
+<nav class="navbar navbar-default navbar-fixed-top">
+<img src="img/logo.jpg" width="50" height="50">
+  <div class="container">
+  <ul>
+  	<li>
+	  	<div class="navbutton">
+	  		<a href="index.html">Home</a>
+	  	</div>
+  	</li>
+  	<li> 
+  		<div class="navbutton">
+	  		<a href="roster.html">Roster</a>
+	  	</div>
+  	</li>
+  	<li>
+  		<div class="navbutton">
+	  		<a href="calendario.html">Calendário</a>
+	  	</div>
+	</li>
+  </ul> 
+  </div>
+</nav>
+<div class="container">
+	<table class="table table-hover table-bordered">
+		<tr>
+		    <th>Dom</th>
+		    <th>Seg</th> 
+		    <th>Ter</th>
+		    <th>Qua</th>
+		    <th>Qui</th>
+		    <th>Sex</th>
+		    <th>Sáb</th>
+		</tr>
+		<tr class="semana">
+			<td class="dias" data-toggle="modal" data-target="#jogo"><span id="0108">1</span></td>
+			<td class="dias" data-toggle="modal" data-target="#jogo"><span id="0208">2</span></td>
+			<td class="dias" data-toggle="modal" data-target="#jogo"><span id="0308">3</span></td>
+			<td class="dias" data-toggle="modal" data-target="#jogo"><span id="0408">4</span></td>
+			<td class="dias" data-toggle="modal" data-target="#jogo"><span id="0508">5</span></td>
+			<td class="dias" data-toggle="modal" data-target="#jogo"><span id="0608">6</span></td>
+			<td class="dias" data-toggle="modal" data-target="#jogo"><span id="0708">7</span></td>
+		</tr>
+		<tr class="semana">
+			<td class="dias" data-toggle="modal" data-target="#jogo"><span id="0808">8</span></td>
+			<td class="dias" data-toggle="modal" data-target="#jogo"><span id="0908">9</span></td>
+			<td class="dias" data-toggle="modal" data-target="#jogo"><span id="1008">10</span></td>
+			<td class="dias" data-toggle="modal" data-target="#jogo"><span id="1108">11</span></td>
+			<td class="dias" data-toggle="modal" data-target="#jogo"><span id="1208">12</span></td>
+			<td class="dias" data-toggle="modal" data-target="#jogo"><span id="1308">13</span></td>
+			<td class="dias" data-toggle="modal" data-target="#jogo"><span id="1408">14</span></td>
+		</tr>
+		<tr class="semana">
+			<td class="dias" data-toggle="modal" data-target="#jogo"><span id="1508">15</span></td>
+			<td class="dias" data-toggle="modal" data-target="#jogo"><span id="1608">16</span></td>
+			<td class="dias" data-toggle="modal" data-target="#jogo"><span id="1708">17</span></td>
+			<td class="dias" data-toggle="modal" data-target="#jogo"><span id="1808">18</span></td>
+			<td class="dias" data-toggle="modal" data-target="#jogo"><span id="1908">19</span></td>
+			<td class="dias" data-toggle="modal" data-target="#jogo"><span id="2008">20</span></td>
+			<td class="dias" data-toggle="modal" data-target="#jogo"><span id="2108">21</span></td>
+		</tr>
+		<tr class="semana">
+			<td class="dias" data-toggle="modal" data-target="#jogo"><span id="2208">22</span></td>
+			<td class="dias" data-toggle="modal" data-target="#jogo"><span id="2308">23</span></td>
+			<td class="dias" data-toggle="modal" data-target="#jogo"><span id="2408">24</span></td>
+			<td class="dias" data-toggle="modal" data-target="#jogo"><span id="2508">25</span></td>
+			<td class="dias" data-toggle="modal" data-target="#jogo"><span id="2608">26</span></td>
+			<td class="dias" data-toggle="modal" data-target="#jogo"><span id="2708">27</span></td>
+			<td class="dias" data-toggle="modal" data-target="#jogo"><span id="2808">28</span></td>
+		</tr>
+		<tr class="semana">
+			<td class="dias" data-toggle="modal" data-target="#jogo"><span id="2908">29</span></td>
+			<td class="dias" data-toggle="modal" data-target="#jogo"><span id="3008">30</span></td>
+			<td class="dias" data-toggle="modal" data-target="#jogo"><span id="3108">31</span></td>
+			<td class="dias" data-toggle="modal" data-target="#jogo"><span id="0109">1</span></td>
+			<td class="dias" data-toggle="modal" data-target="#jogo"><span id="0209">2</span></td>
+			<td class="dias" data-toggle="modal" data-target="#jogo"><span id="0309">3</span></td>
+			<td class="dias" data-toggle="modal" data-target="#jogo"><span id="0409">4</span></td>
+		</tr>
+	</table>
+</div>
+<script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmks2V8tln81iI353dFIbL4wRpZcS3A4c"></script>
+<script type="text/javascript" src="js/nav.js"></script>
+<script type="text/javascript" src="js/calendario.js"></script>
+</body>
+</html>
